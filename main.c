@@ -12,5 +12,15 @@ int main() {
 
 // 3.函数定义
 void practice(){
-    printf("10进制: %d,8进制: %#o,16进制: %#x,16进制: %#X", 10, 10, 10, 10);
+    printf("10进制: %d,8进制: %#o,16进制: %#x,16进制: %#X\n", 10, 10, 10, 10);
+    char c1='A';
+    printf("%c\n",c1);
+    printf("%d\n",c1);
+    printf("short has a size of %lu bytes \n",sizeof(short));
+    printf("int has a size of %lu bytes \n",sizeof(int));
+    printf("long has a size of %lu bytes \n",sizeof(long));
+    printf("long has a size of %lu bytes \n",sizeof(long long));
+
+
+
 }

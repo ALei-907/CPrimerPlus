@@ -23,4 +23,14 @@ void section3(void) {
      */
     printf("10进制: %d,8进制: %#o,16进制: %#x,16进制: %#X", 10, 10, 10, 10);
 
+    /**
+     * short has a size of 2 bytes
+     * int has a size of 4 bytes
+     * long has a size of 8 bytes
+     * long has a size of 8 bytes
+     */
+    printf("short has a size of %lu bytes \n", sizeof(short));
+    printf("int has a size of %lu bytes \n", sizeof(int));
+    printf("long has a size of %lu bytes \n", sizeof(long));
+    printf("long has a size of %lu bytes \n", sizeof(long long));
 }
