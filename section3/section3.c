@@ -33,4 +33,10 @@ void section3(void) {
     printf("int has a size of %lu bytes \n", sizeof(int));
     printf("long has a size of %lu bytes \n", sizeof(long));
     printf("long has a size of %lu bytes \n", sizeof(long long));
+
+    /**
+     * result: D
+     */
+    char c1 = 'ABCD';
+    printf("%c",c1);
 }
