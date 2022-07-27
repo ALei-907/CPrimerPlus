@@ -12,10 +12,19 @@ int main() {
 
 // 3.函数定义
 void practice() {
-    int a,b;
-    scanf("%d",&a);
-    scanf("%d",&b);
-
-    printf("%d,%d",a,b);
+    char ch;
+    const char SPACE = ' ';
+    ch = getchar();
+    while (ch != '\n') {
+        if (ch == SPACE) {
+            putchar(ch);
+        } else {
+            putchar(ch + 1);
+        }
+        ch = getchar();
+    }
+    printf("\nEND ....");
+    putchar(ch);
+    printf("\nEND ....");
 
 }
