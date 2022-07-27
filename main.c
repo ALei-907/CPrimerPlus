@@ -13,18 +13,22 @@ int main() {
 // 3.函数定义
 void practice() {
     char ch;
-    const char SPACE = ' ';
     ch = getchar();
-    while (ch != '\n') {
-        if (ch == SPACE) {
-            putchar(ch);
-        } else {
-            putchar(ch + 1);
-        }
+    while (1) {
+        if (ch != '\n')
+            switch (ch) {
+                case 65:
+                    printf("A\n");
+                    break;
+                case 66:
+                    printf("B\n");
+                    break;
+                default:
+                    printf("Other Char\n");
+                    break;
+            }
+        if (ch == '|')
+            break;
         ch = getchar();
     }
-    printf("\nEND ....");
-    putchar(ch);
-    printf("\nEND ....");
-
 }
