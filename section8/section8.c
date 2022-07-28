@@ -1,24 +1,23 @@
-#include <stdio.h>
+//
+// Created by 雷立民 on 2022/7/28.
+//
+#include "stdio.h"
 #include "stdlib.h"
 
-// 为何在此处声明,因为程序是由上至下执行的,如果不在此处声明,那执行至main()时就不知道print_hello()表示的含义
-// 1.声明函数原型
-void practice(); /* help print "hello world"*/
-
-int main() {
-    // 2.函数调用
-    practice();
-    return 0;
-}
-
-// 3.函数定义
-void practice() {
+void section8(void) {
+    /**
+    * ^D: 表示EOF,表示文件的末尾
+    */
     int ch;
+    while ((ch = getchar()) != EOF) {
+        putchar(ch);
+    }
+
     FILE *fp;
     char fname[50]; /* 一个文件名 */
     printf("请输入一个文件名.\n");
     scanf("%s", fname);
-    fp = fopen(fname, "wt");
+    fp = fopen(fname, "r");
     if (fp == NULL) {
         printf("输出: 空文件! Bye.\n");
         exit(1); /* 退出成勋 */
