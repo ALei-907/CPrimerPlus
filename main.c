@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MONTHS 12
+#define SIZE 10
 
 // 为何在此处声明,因为程序是由上至下执行的,如果不在此处声明,那执行至main()时就不知道print_hello()表示的含义
 // 1.声明函数原型
@@ -14,10 +14,19 @@ int main() {
 
 // 3.函数定义
 void practice(void) {
-    int staff[] = {1, [6]=7};
-    int stuff[] = {1, [6]=7, 8, 9};
-    printf("staff size = %zd\n", sizeof staff / sizeof staff[0]);
-    printf("stuff size = %zd\n", sizeof stuff / sizeof stuff[0]);
+    short shortArr[SIZE] = {};
+    short *pShort;
+    double doubleArr[SIZE] = {};
+    double *pDouble;
+    pShort = shortArr;
+    pDouble = doubleArr;
+    printf("%23s %15s\n", "short", "double");
+    for (int index = 0; index < SIZE; ++index) {
+        printf("pointers + %d: %10p %10p\n", index, pShort + index, pDouble + index);
+        printf("  value  + %d: %10d %10f\n", index, *(pShort + index), *(pDouble + index));
+
+    }
+
 }
 
 
