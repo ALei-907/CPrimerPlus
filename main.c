@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define SIZE 10
-
+#define MSG "i am a symbolic string constant."
+#define MAXLENGTH 81
 // 为何在此处声明,因为程序是由上至下执行的,如果不在此处声明,那执行至main()时就不知道print_hello()表示的含义
 // 1.声明函数原型
 void practice(void); /* help print "hello world"*/
@@ -14,18 +14,17 @@ int main() {
 
 // 3.函数定义
 void practice(void) {
-    short shortArr[SIZE] = {};
-    short *pShort;
-    double doubleArr[SIZE] = {};
-    double *pDouble;
-    pShort = shortArr;
-    pDouble = doubleArr;
-    printf("%23s %15s\n", "short", "double");
-    for (int index = 0; index < SIZE; ++index) {
-        printf("pointers + %d: %10p %10p\n", index, pShort + index, pDouble + index);
-        printf("  value  + %d: %10d %10f\n", index, *(pShort + index), *(pDouble + index));
+//    char words[MAXLENGTH] = "i am a string in a array.";
+    char words[MAXLENGTH] = "i am a string in a "
+                            "array.";
 
-    }
+    const char *pt1 = "something is pointing at me.";
+    puts("Here are some strings.");
+    puts(MSG);
+    puts(words);
+    puts(pt1);
+    words[8] = 'p';
+    puts(words);
 
 }
 
