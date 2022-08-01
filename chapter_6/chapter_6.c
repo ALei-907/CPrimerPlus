@@ -1,9 +1,10 @@
 //
 // Created by Zcr on 2022/7/27.
+// 逗号表达式
 //
 #include "stdio.h"
 
-void section6(void) {
+void chapter_6(void) {
     /**
      * input: 1 2 [Enter]
      * output: 1,2

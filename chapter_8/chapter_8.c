@@ -4,7 +4,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-void section8(void) {
+void chapter_8(void) {
     /**
     * ^D: 表示EOF,表示文件的末尾
     */

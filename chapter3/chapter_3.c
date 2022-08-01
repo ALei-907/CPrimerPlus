@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 
-void section3(void) {
+void data_type(void) {
     int ten = 10, two = 2;
     /**
      * result: 10 is ten,2 is two,16 is constant
@@ -28,6 +28,9 @@ void section3(void) {
      * int has a size of 4 bytes
      * long has a size of 8 bytes
      * long has a size of 8 bytes
+     *
+     * sizeof是关键字,并不是函数
+     * 如果sizeof修饰的是变量可以不加(),但如果修饰的是类型就必须要要加上()
      */
     printf("short has a size of %lu bytes \n", sizeof(short));
     printf("int has a size of %lu bytes \n", sizeof(int));
@@ -36,7 +39,8 @@ void section3(void) {
 
     /**
      * result: D
+     * 只存储最后一位字符
      */
     char c1 = 'ABCD';
-    printf("%c",c1);
+    printf("%c", c1);
 }

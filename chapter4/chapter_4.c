@@ -6,7 +6,7 @@
 
 #define DENSITY 62.4
 
-void section4(void) {
+void chapter_4(void) {
     /**
      * 输入你的名字:
      * -- lewis
@@ -25,7 +25,9 @@ void section4(void) {
     scanf("%s", name);
     printf("%s,你的体重是多少?\n", name);
     scanf("%f", &weight);
+    // sizeof(name): 由于是一个40长度的数组所以是40个字节
     size = sizeof(name);
+    // strlen()函数只统计有效字符的大小,不包含空白字符
     letters = strlen(name);
     volume = weight / DENSITY;
 

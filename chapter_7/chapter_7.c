@@ -2,7 +2,6 @@
 // Created by Zcr on 2022/7/27.
 //
 #include "stdio.h"
-#include "stdbool.h"
 
 /**
  * ABCDE FG
@@ -11,7 +10,7 @@
  *
  * END ....
  */
-void section7(void) {
+void chapter_7(void) {
     char ch;
     // const表示不可变的常量
     const char SPACE = ' ';
