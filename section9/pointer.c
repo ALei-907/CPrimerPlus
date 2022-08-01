@@ -1,5 +1,5 @@
 //
-// Created by 雷立民 on 2022/7/29.
+// Created by Zcr on 2022/7/29.
 #include "stdio.h"
 
 void incr_a(int *pInt); // 指针类型的传递
