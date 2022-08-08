@@ -37,7 +37,7 @@ int fake_main(int argc, char *argv[]) {
     FILE *out; // 模拟复制一个文件
     char *out_file_name = "copy.txt";
     if ((out = fopen(out_file_name, "w")) == NULL) { /* 读取文件失败 */
-        printf("Can't create file: %s.\n", out_file_name);
+        fprintf(stderr,"Can't create file: %s.\n", out_file_name);/* 如果创建文件出现异常,可用来将错误信息发送到指定文件*/
         exit(EXIT_FAILURE);
     }
     /* getc(): 要告诉函数从指定的文件中获取一个字符串 */
