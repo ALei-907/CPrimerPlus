@@ -5,6 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h> // 提供exit()原型
 
+/**
+ * 文件读写程序
+ * @param argc 参数个数(程序文件名,和打开文件名列表都是计入其中的)
+ * @param argv  打开的文件列表(其实是字符串数组)
+ */
 int fake_main(int argc, char *argv[]) {
     int ch;
     FILE *fp;   // 文件指针
