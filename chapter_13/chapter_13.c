@@ -37,7 +37,7 @@ int fake_main(int argc, char *argv[]) {
     FILE *out; // 模拟复制一个文件
     char *out_file_name = "copy.txt";
     if ((out = fopen(out_file_name, "w")) == NULL) { /* 读取文件失败 */
-        fprintf(stderr,"Can't create file: %s.\n", out_file_name);/* 如果创建文件出现异常,可用来将错误信息发送到指定文件*/
+        fprintf(stderr, "Can't create file: %s.\n", out_file_name);/* 如果创建文件出现异常,可用来将错误信息发送到指定文件*/
         exit(EXIT_FAILURE);
     }
     /* getc(): 要告诉函数从指定的文件中获取一个字符串 */
@@ -56,6 +56,36 @@ int fake_main(int argc, char *argv[]) {
     fclose(fp); /* 好习惯: IO流使用完应该及时关闭 */
     fclose(out);
     printf("File %s has %lu characters\n", argv[1], count);
+    return 0;
+}
+
+/**
+ * 复制文件的脚本
+ */
+int main(int argc, char *argv[]) {
+    char ch;
+    FILE *in, *out;
+    if (argc != 3) {
+        fprintf(stderr, "参数包含: 脚本文件名称,源文件,复制文件名称");
+        exit(EXIT_FAILURE);
+    }
+    /* 只读模式打开源文件*/
+    if ((in = fopen(argv[1], "r")) == NULL) {
+        fprintf(stderr, "源文件打开失败: %s", argv[1]);
+        exit(EXIT_FAILURE);
+    }
+    /* w模式新建或者重写文件*/
+    if ((out = fopen(argv[2], "w")) == NULL) {
+        fprintf(stderr, "文件创建失败: %s", argv[2]);
+        exit(EXIT_FAILURE);
+    }
+    /* 文件复制开始 */
+    while ((ch = getc(in)) != EOF) {
+        putc(ch, out);
+        putc(ch, stdout);
+    }
+    fclose(in);
+    fclose(out);
     return 0;
 }
 
