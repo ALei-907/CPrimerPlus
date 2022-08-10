@@ -66,6 +66,7 @@ int fake_main(void) {
     /**
      * 声明pBook为指向book结构的指针,并对其赋值未books[0]的地址
      * : 因为结构数组的数组名并不代表结构变量地址,所以需要加"&"
+     * : 当结构数组作为函数传递传递时,数组名 = &books[0]
      */
     struct book *pBook = &books[0];
     pBook = pBook + 1; /* 本质上等于books[1] */
@@ -105,7 +106,9 @@ int fake_main(void) {
     /* 为什么使用strcpy(); bp1.title ="ABC"相对与对指针成员再次赋值了,那前面分配的地址就毫无意义,字符串字面量就是一个字符数组,数组名也即首地址 */
     strcpy(bp1.title, "Book_Point");
     strcpy(bp1.author, "Author");
-
+    /* 使用完要及时释放内存空间 */
+    free(bp1.title);
+    free(bp1.author);
     return 0;
 }
 
