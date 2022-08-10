@@ -2,6 +2,7 @@
 // C结构学习
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 
 #define MAX_TITLE 41    /* 定义书名的最大长度+1 */
 #define MAX_AUTHOR 31   /* 作者姓名的最大长度+1 */
@@ -100,8 +101,11 @@ int fake_main(void) {
     struct book_point bp2;
     bp1.title = malloc(MAX_TITLE * (sizeof(char)));     /* 申请分配地址方式一 */
     bp1.author = calloc(MAX_AUTHOR, sizeof(char));/* 申请分配地址方式二 */
-    bp1.title = "Book_Point";
-    bp1.author = "Author";
+
+    /* 为什么使用strcpy(); bp1.title ="ABC"相对与对指针成员再次赋值了,那前面分配的地址就毫无意义,字符串字面量就是一个字符数组,数组名也即首地址 */
+    strcpy(bp1.title, "Book_Point");
+    strcpy(bp1.author, "Author");
+
     return 0;
 }
 
