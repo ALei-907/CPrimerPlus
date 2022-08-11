@@ -3,6 +3,9 @@
 /* STRING: 表示为一个字符指针*/
 typedef char *STRING;
 
+/* 定义了一个函数指针: 入参为2个int变量,返回char的函数指针*/
+typedef char (*pFun)(int a, int b);
+
 /* COMPLEX表示complex结构 */
 typedef struct complex {
     float real;
