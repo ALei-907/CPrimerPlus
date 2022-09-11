@@ -15,7 +15,7 @@ void fake_main(void) {
      */
     char arr[4] = "ABC";
     PF pf;
-    pf = getAndSetChar;             /* 为该函数指针赋值(函数地址),使用函数名即可*/
+    pf = getAndSetChar;             /* 为该函数指针赋值(函数地址),使用函数名即可,函数名==函数地址*/
     printf("%p: %s\n", arr, arr);   /* 使用函数指针,当然了函数的参数也可以是函数指针*/
     char return_val = (*pf)(arr, 'a');
     printf("return Value=%c\n", return_val);
