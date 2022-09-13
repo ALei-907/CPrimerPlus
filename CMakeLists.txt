@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.21)
-project(CPrimerPlus6 C)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.21)
+PROJECT(CPrimerPlus6 C)
 
-set(CMAKE_C_STANDARD 99)
+SET(CMAKE_C_STANDARD 99)
 
-add_executable(main main.c)
+ADD_EXECUTABLE(main main.c)
+
+ADD_EXECUTABLE(chapter_3 chapter3/chapter_3.c)

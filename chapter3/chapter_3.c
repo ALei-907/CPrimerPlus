@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 
-void data_type(void) {
+int main(void) {
     int ten = 10, two = 2;
     /**
      * result: 10 is ten,2 is two,16 is constant
