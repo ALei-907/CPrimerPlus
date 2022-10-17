@@ -6,7 +6,7 @@
 
 #define DENSITY 62.4
 
-void chapter_4(void) {
+int main() {
     /**
      * 输入你的名字:
      * -- lewis

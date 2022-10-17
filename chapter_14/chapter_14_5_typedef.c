@@ -1,4 +1,4 @@
-// Created by Zcr on 2022/8/10.
+#include <stdio.h>
 
 /* STRING: 表示为一个字符指针*/
 typedef char *STRING;
@@ -18,12 +18,24 @@ typedef struct {
     float imag;
 } COMPLEX_SIMPLE;
 
-void fake_main(void) {
-    STRING str = "ABC";
-    COMPLEX complex1 = {
-            1.0F,
-            2.0F
+/* 同时定义结构与结构指针 */
+typedef struct {
+    int a;
+} TEMP_S, *TEMP_SP;
+
+int main(void) {
+    TEMP_S tempS = {
+            1
     };
+    printf("tempS.a=[%d]\n", tempS.a);
+    TEMP_SP tempSp = &tempS;
+    tempSp->a = 2;
+    printf("After Change,tempS.a=[%d]\n", tempS.a);
+
+
+
+    STRING str = "ABC";
+    printf("str=[%s]\n", str);
 }
 
 
